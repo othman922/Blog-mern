@@ -5,13 +5,13 @@ module.exports = async (userEmail, subject, htmlTemplate) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.APP_EMAIL_ADDRESS,
+        user: process.env.APP_EMAIL_ADDREES,
         pass: process.env.APP_EMAIL_PASSWORD,
       },
     });
 
     const mailOptions = {
-      from: process.env.APP_EMAIL_ADDRESS,
+      from: process.env.APP_EMAIL_ADDREES,
       to: userEmail,
       subject: subject,
       html: htmlTemplate,
